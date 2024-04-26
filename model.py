@@ -23,3 +23,21 @@ class TodoItem(BaseModel):
       }
     }
   }
+
+class TodoItems(BaseModel):
+  todos: list[TodoItem]
+
+  model_config = {
+    "json_schema_extra" : {
+      "example" : {
+        "todos" : [
+          {
+            "item" : "example 1"
+          }, 
+          {
+            "item" : "example 2"
+          }
+        ]
+      }
+    }
+  }
